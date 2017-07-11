@@ -1,7 +1,21 @@
-$(".btn").click(function(){
-	//alert($(this));
-	//$("body").toggleClass("active");
-	$(".bar1").toggleClass("active");  
-	$(".bar2").toggleClass("active"); 
-	$(".bar3").toggleClass("active"); 
+  $('document').ready(function () {
+    var trigger = $('#hamburger'),
+        isClosed = true;
+
+    trigger.click(function () {
+      burgerTime();
     });
+
+    function burgerTime() {
+      if (isClosed == true) {
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+    }
+
+  });
